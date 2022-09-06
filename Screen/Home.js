@@ -49,7 +49,7 @@ const HomeScreen = () => {
         0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,
         0,96,0,48,0L0,0Z"
         />
-        <Text style={[typo.h1, { color: COLORS.white, fontSize: 30 }]}>ควายไทย</Text>
+        <Text style={[typo.h1, { color: COLORS.white, fontSize: 50 }]}>ควายไทย</Text>
         <Text style={[typo.h1, { color: COLORS.white }]}>แอพหรับคนเลี้ยงควาย</Text>
         <Text style={{ color: COLORS.white, fontSize: 100 }}>🐃</Text>
       </View>
@@ -91,8 +91,7 @@ const HomeScreen = () => {
                 {item.icon}
               </Text>
             </View>
-            {/* <Text style={[typo.h2, { color: COLORS.white }]}>{item.number}</Text> */}
-            <Text style={[typo.h1, { color: COLORS.white }]}>{item.title}</Text>
+            <Text style={[typo.h1, { color: COLORS.white, fontSize: 20 }]}>{item.title}</Text>
           </TouchableOpacity>
         )}
         numColumns={2}

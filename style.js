@@ -9,7 +9,7 @@ export const COLORS = {
 }
 export const typo = StyleSheet.create({
   h1: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "bold",
     fontFamily: "Prompt_700Bold",
     color: COLORS.primary,
@@ -21,6 +21,7 @@ export const typo = StyleSheet.create({
     color: COLORS.primary,
   },
   body: {
+    fontSize: 16,
     fontFamily: "Prompt_400Regular",
     color: COLORS.primary,
   },
