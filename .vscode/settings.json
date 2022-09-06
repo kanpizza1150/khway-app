@@ -9,5 +9,6 @@
     "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
     "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": false,
     "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
-    "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false
+    "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
+    "editor.formatOnSave": true
 }
