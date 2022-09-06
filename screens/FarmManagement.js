@@ -63,26 +63,6 @@ const FarmManagementScreen = () => {
               }}
               onPress={() => onMenuPress(item.navigateTo)}
             >
-              {/* <View
-                style={{
-                  backgroundColor: COLORS.white,
-                  position: "absolute",
-                  top: "-10%",
-                  left: "-10%",
-                  width: "40%",
-                  height: "70%",
-                  borderRadius: 100,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}>
-                <Text
-                  style={{
-                    fontSize: 20,
-                  }}>
-                  {item.icon}
-                </Text>
-              </View> */}
-              {/* <Text style={[typo.body, { color: COLORS.white, fontSize: 10 }]}>{item.number}</Text> */}
               <Text
                 style={[typo.h1, { color: item?.textColor || COLORS.white }]}
               >
