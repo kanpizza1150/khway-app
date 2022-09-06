@@ -1,44 +1,44 @@
-import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import { useNavigation } from '@react-navigation/native'
+import React from 'react'
 import {
   Dimensions,
   FlatList,
   SafeAreaView,
   Text,
   TouchableOpacity,
-  View
-} from 'react-native';
+  View,
+} from 'react-native'
 
-import WavyHeader from '../components/WavyHeader';
-import { COLORS, typo } from '../style';
+import WavyHeader from '../components/WavyHeader'
+import { COLORS, typo } from '../style'
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
-  const onMenuPress = to => {
-    navigation.navigate(to);
-  };
+  const navigation = useNavigation()
+  const onMenuPress = (to) => {
+    navigation.navigate(to)
+  }
   const menus = [
     {
       title: 'ทำเนียบควายไทย',
       color: COLORS.primary,
       number: '',
       icon: '🐃',
-      navigateTo: 'SireList'
+      navigateTo: 'SireList',
     },
     {
       title: 'จัดการฟาร์ม',
-      color: '#009FB7',
+      color: COLORS.turquoise,
       number: '',
       icon: '🏡',
-      navigateTo: 'FarmManagement'
-    }
-  ];
+      navigateTo: 'FarmManagement',
+    },
+  ]
   return (
     <SafeAreaView
       style={{
         flex: 1,
         justifyContent: 'space-between',
-        backgroundColor: COLORS.background
+        backgroundColor: COLORS.background,
       }}
     >
       <View
@@ -46,13 +46,13 @@ const HomeScreen = () => {
           padding: 20,
           alignItems: 'center',
           marginBottom: 15,
-          backgroundColor: 'transparent'
+          backgroundColor: 'transparent',
         }}
       >
         <WavyHeader
           customStyles={{
             position: 'absolute',
-            width: Dimensions.get('window').width
+            width: Dimensions.get('window').width,
           }}
           customHeight={160}
           customTop={130}
@@ -88,7 +88,7 @@ const HomeScreen = () => {
               overflow: 'hidden',
               padding: 10,
               justifyContent: 'flex-end',
-              alignItems: 'flex-end'
+              alignItems: 'flex-end',
             }}
             onPress={() => onMenuPress(item.navigateTo)}
           >
@@ -102,12 +102,12 @@ const HomeScreen = () => {
                 height: 150,
                 borderRadius: 100,
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
               }}
             >
               <Text
                 style={{
-                  fontSize: 50
+                  fontSize: 50,
                 }}
               >
                 {item.icon}
@@ -121,6 +121,6 @@ const HomeScreen = () => {
         numColumns={2}
       />
     </SafeAreaView>
-  );
-};
-export default HomeScreen;
+  )
+}
+export default HomeScreen

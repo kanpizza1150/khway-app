@@ -1,16 +1,15 @@
-import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { Text, View } from 'react-native';
-import IoniconsIcons from 'react-native-vector-icons/Ionicons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native'
+import React from 'react'
+import { Text, View } from 'react-native'
 
-import { COLORS, typo } from '../style';
+import { COLORS, typo } from '../style'
+import { IoniconsIcons, MaterialCommunityIcons } from './Icon'
 
 const ScreenHeader = ({ title, onBack = undefined }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
   const handleOnPressBack = () => {
-    navigation.goBack();
-  };
+    navigation.goBack()
+  }
   return (
     <View
       style={{
@@ -18,7 +17,7 @@ const ScreenHeader = ({ title, onBack = undefined }) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row',
-        padding: 15
+        padding: 15,
       }}
     >
       {onBack ? (
@@ -44,7 +43,7 @@ const ScreenHeader = ({ title, onBack = undefined }) => {
         />
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default ScreenHeader;
+export default ScreenHeader

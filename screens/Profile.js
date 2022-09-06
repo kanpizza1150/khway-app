@@ -1,8 +1,8 @@
-import React from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
+import React from 'react'
+import { SafeAreaView, Text, View } from 'react-native'
 
-import ScreenHeader from '../components/ScreenHeader';
-import styles, { typo } from '../style';
+import ScreenHeader from '../components/ScreenHeader'
+import styles, { typo } from '../style'
 
 const ProfileScreen = () => {
   return (
@@ -13,6 +13,6 @@ const ProfileScreen = () => {
         <Text style={[typo.h1]}>Coming soon...</Text>
       </View>
     </SafeAreaView>
-  );
-};
-export default ProfileScreen;
+  )
+}
+export default ProfileScreen

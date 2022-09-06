@@ -1,38 +1,36 @@
-import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import { useNavigation } from '@react-navigation/native'
+import React from 'react'
 import {
   FlatList,
   SafeAreaView,
   Text,
   TouchableOpacity,
-  View
-} from 'react-native';
+  View,
+} from 'react-native'
 
-import ScreenHeader from '../components/ScreenHeader';
-import styles, { COLORS, typo } from '../style';
+import ScreenHeader from '../components/ScreenHeader'
+import styles, { COLORS, typo } from '../style'
 
 const FarmManagementScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   const menus = [
     {
-      title: 'K39 Ranch',
-      color: '#009FB7',
-      number: '',
+      name: 'K39 Ranch',
+      color: COLORS.turquoise,
       icon: '1',
-      navigateTo: 'SireList'
+      navigateTo: 'FarmDetail',
     },
     {
-      title: 'K39 Ranch',
-      color: '#009FB7',
-      number: '',
+      name: 'ทศพลฟาร์ม',
+      color: COLORS.turquoise,
       icon: '2',
-      navigateTo: 'SireList'
-    }
-  ];
-  const onMenuPress = to => {
-    navigation.navigate(to);
-  };
+      navigateTo: 'FarmDetail',
+    },
+  ]
+  const onMenuPress = (to, data) => {
+    navigation.navigate(to, { data })
+  }
   return (
     <SafeAreaView style={[styles.container, { justifyContent: 'flex-start' }]}>
       <ScreenHeader title="จัดการฟาร์ม" />
@@ -44,8 +42,8 @@ const FarmManagementScreen = () => {
               color: '#e0e0e0',
               navigateTo: '',
               textColor: COLORS.primary,
-              title: 'เพิ่มฟาร์ม'
-            }
+              name: 'เพิ่มฟาร์ม',
+            },
           ]}
           renderItem={({ item }) => (
             <TouchableOpacity
@@ -59,14 +57,14 @@ const FarmManagementScreen = () => {
                 overflow: 'hidden',
                 padding: 10,
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
               }}
-              onPress={() => onMenuPress(item.navigateTo)}
+              onPress={() => onMenuPress(item.navigateTo, item)}
             >
               <Text
                 style={[typo.h1, { color: item?.textColor || COLORS.white }]}
               >
-                {item.title}
+                {item.name}
               </Text>
             </TouchableOpacity>
           )}
@@ -74,6 +72,6 @@ const FarmManagementScreen = () => {
         />
       </View>
     </SafeAreaView>
-  );
-};
-export default FarmManagementScreen;
+  )
+}
+export default FarmManagementScreen

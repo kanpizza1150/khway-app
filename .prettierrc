@@ -1,12 +1,14 @@
 {
-  "trailingComma": "none",
-  "arrowParens": "avoid",
+  "trailingComma": "es5",
+  "arrowParens": "always",
   "singleQuote": true,
   "printWidth": 80,
   "useTabs": false,
   "tabWidth": 2,
-  "semi": true,
+  "semi": false,
   "importOrder": ["^[./]", "^@/(.*)$"],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderSortSpecifiers": true,
+  "jsxBracketSameLine": false,
+  "bracketSpacing": true
 }

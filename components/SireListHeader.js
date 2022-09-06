@@ -1,30 +1,29 @@
-import React, { useMemo, useState } from 'react';
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
-import EntypoIcons from 'react-native-vector-icons/Entypo';
-import IoniconsIcons from 'react-native-vector-icons/Ionicons';
+import React, { useMemo, useState } from 'react'
+import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 
-import { COLORS, typo } from '../style';
+import { COLORS, typo } from '../style'
+import { EntypoIcons, IoniconsIcons } from './Icon'
 
 const SireListHeader = ({ onSearch, onTagChange }) => {
-  const [tag, setTag] = useState('all');
-  const [searchKeyword, setSearchKeyword] = useState('');
+  const [tag, setTag] = useState('all')
+  const [searchKeyword, setSearchKeyword] = useState('')
   const list = [
     { title: 'ทั้งหมด', value: 'all', isActive: tag === 'all' },
     { title: 'พ่อพันธุ์', value: 'sire', isActive: tag === 'sire' },
-    { title: 'แม่พันธุ์', value: 'dam', isActive: tag === 'dam' }
-  ];
-  const handleSearch = val => {
-    setSearchKeyword(val);
-    onSearch(val, tag);
-  };
-  const handleTag = val => {
-    setTag(val);
-    onSearch(searchKeyword, val);
-  };
+    { title: 'แม่พันธุ์', value: 'dam', isActive: tag === 'dam' },
+  ]
+  const handleSearch = (val) => {
+    setSearchKeyword(val)
+    onSearch(val, tag)
+  }
+  const handleTag = (val) => {
+    setTag(val)
+    onSearch(searchKeyword, val)
+  }
   const tags = useMemo(() => {
     return (
       <View style={{ flex: 1, flexDirection: 'row', marginVertical: 10 }}>
-        {list.map(tag => (
+        {list.map((tag) => (
           <TouchableOpacity
             onPress={() => handleTag(tag.value)}
             key={tag.value}
@@ -35,13 +34,15 @@ const SireListHeader = ({ onSearch, onTagChange }) => {
               paddingVertical: 5,
               paddingHorizontal: 10,
               marginRight: 5,
-              backgroundColor: tag.isActive ? COLORS.background : COLORS.primary
+              backgroundColor: tag.isActive
+                ? COLORS.background
+                : COLORS.primary,
             }}
           >
             <Text
               style={[
                 typo.body,
-                { color: tag.isActive ? COLORS.primary : COLORS.background }
+                { color: tag.isActive ? COLORS.primary : COLORS.background },
               ]}
             >
               {tag.title}
@@ -49,8 +50,8 @@ const SireListHeader = ({ onSearch, onTagChange }) => {
           </TouchableOpacity>
         ))}
       </View>
-    );
-  }, [onTagChange, tag, list]);
+    )
+  }, [onTagChange, tag, list])
 
   return (
     <View>
@@ -62,7 +63,7 @@ const SireListHeader = ({ onSearch, onTagChange }) => {
           flexDirection: 'row',
           alignItems: 'center',
           paddingHorizontal: 12,
-          paddingVertical: 10
+          paddingVertical: 10,
         }}
       >
         <IoniconsIcons
@@ -81,7 +82,7 @@ const SireListHeader = ({ onSearch, onTagChange }) => {
         {searchKeyword && (
           <TouchableOpacity
             onPress={() => {
-              handleSearch('');
+              handleSearch('')
             }}
           >
             <EntypoIcons
@@ -94,7 +95,7 @@ const SireListHeader = ({ onSearch, onTagChange }) => {
       </View>
       {tags}
     </View>
-  );
-};
+  )
+}
 
-export default SireListHeader;
+export default SireListHeader
